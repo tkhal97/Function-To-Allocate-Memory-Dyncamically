@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+// Function Prototypes
+char* input(char* array);
+
+int main()
+{
+  char* name;
+  
+  cout << "Please enter your name: " << endl;
+  name = input(name);
+  
+  cout << "Your name: " << name << '\n';
+  cout << "Length of name: " << strlen(name) << '\n';
+  
+}
+
+// Function
+char* input(char* array)
+{
+  char temp[101];
+  
+  cin.get(temp, 101, '\n');
+  cin.ignore(101, '\n');
+  
+  array = new char[strlen(temp) + 1];
+  strcpy(array, temp);
+  
+  return array;
+}
